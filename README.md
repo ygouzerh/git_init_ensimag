@@ -1,29 +1,26 @@
 # git_init_ensimag
 
 ## Description
-Automate tool for creating git repositories on depots.ensimag.fr
+Automate tool for creating git repositories on `depots.ensimag.fr`.
 
-This script automate the creation of a git on depots.ensimag.fr
-Allow you to share a git with other colleagues.
-> Add multiple colleague could be done by : '-c pseudo1 -c pseudo1' .....
+This script automates the creation of a git on `depots.ensimag.fr`.  
+It allows you to share a git with other colleagues.
+> Add multiple colleague could be done by : `-c pseudo1 -c pseudo2`.
 
 ## Usage
-./git_init.sh  --gitname name_of_the_git [options]
->Example : ./git_init.sh -g tp.git -c dupontj -c dupondj -f our_folder -v
+`./git_init.sh --gitname name_of_the_git [options]`
+> Example : `./git_init.sh -g tp.git -c dupontj -c dupondj -f our_folder -v`
 
 ## Required arguments
---gitname | -g       Name of the .git
+`--gitname` | `-g`       Name of the .git
 
 ## Options
---help | -h          Display help message<br/>
+`--help` | `-h`        Display help message
 
+`--foldername` | `-f`    Name of the folder on the server
 
---foldername | -f    Name of the folder on the server<br/>
-
-
---colleague | -c     List of the pseudo of your colleague<br/>
-
+`--colleague` | `-c`     List of the pseudo of your colleague
 
 ## Contributions
-
-Feel free to contribute ! All improvements and helps are welcomed.
+Feel free to contribute!  
+All improvements and helps are welcomed.
