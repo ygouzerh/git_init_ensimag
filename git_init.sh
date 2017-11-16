@@ -2,7 +2,7 @@
 
 # title : git_init.sh
 # author : ygouzerh
-# description : Automating tool for creating git repositories on depots.ensimag.fr
+# description : Automation tool for creating git repositories on depots.ensimag.fr
 # date : 16 November 2017
 # version : 1.0
 
@@ -14,7 +14,7 @@ COLLEAGUE=""
 GITNAME=""
 # Name of the folder
 FOLDER_NAME=""
-# Print what the script do if verbose is on
+# Print what the script does if verbose is on
 VERBOSE=false
 # Current year. Ex : 2017
 YEAR=$(date +"%Y")
@@ -26,9 +26,9 @@ usage () {
     cat << EOF
 HELP -- '$(basename "$0")' :
 
-This script automate the creation of a git on depots.ensimag.fr
-Allow you to share a git with other colleagues.
->> Add multiple colleague could be done by : '-c pseudo1 -c pseudo1' .....
+This script automates the creation of a git on depots.ensimag.fr
+Allows you to share a git with other colleagues.
+>> Adding multiple colleagues could be done by : '-c pseudo1 -c pseudo1' .....
 
 Usage: $(basename "$0")  --gitname name_of_the_git [options]
 Example : ./git_init.sh -g tp.git -c dupontj -c dupondj -f our_folder -v
@@ -41,7 +41,7 @@ Options: --help | -h          Display help message
 EOF
 }
 
-# Verbose print is first argument if verbose is on
+# Verbose print is the first argument if verbose is on
 verbose() {
     if [ "$VERBOSE" = true ]; then
         echo "$(basename "$0") > $1"
@@ -88,7 +88,7 @@ while test $# -ne 0; do
                 exit
             fi
             ;;
-        "--verbose" | "-v") # Détaille l'éxecution du script
+        "--verbose" | "-v") # Details the script execution
             VERBOSE=true
         ;;
         *) # if an argument is not recognized, it will show the help and kill the program
@@ -108,7 +108,7 @@ fi
 
 # Possibility to give a folder name by default
 if [ "$FOLDER_NAME" = "" ]; then
-    # Folder name (default): on the form : 'user_pseudo1_pseudo2'. Could be only 'user'
+    # Folder name (default): of the form : 'user_pseudo1_pseudo2'. Could be only 'user'
     FOLDER_NAME=$USER
     if [ ! "$COLLEAGUE" = "" ]; then
         FOLDER_NAME=$FOLDER_NAME"_""${COLLEAGUE// /_}"
@@ -138,7 +138,7 @@ ssh "$USER@depots.ensimag.fr" << EOF
 
     # GIVE THE RIGHTS
     chmod go-rwx .
-    echo "$(basename "$0") > Restrinct to others the access to the folder"
+    echo "$(basename "$0") > Restrict the access to the folder to others"
     autoriser-equipe . $COLLEAGUE
 
 
