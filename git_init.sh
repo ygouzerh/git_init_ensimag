@@ -16,8 +16,12 @@ GITNAME=""
 FOLDER_NAME=""
 # Print what the script does if verbose is on
 VERBOSE=false
-# Current year. Ex : 2017
-YEAR=$(date +"%Y")
+# Current year folder. Ex : 2017 if between September 2017 and Agust 2018
+if [ $(date +"%m") -ge 9 ]; then
+    YEAR=$(date +"%Y")
+else
+    YEAR=$(($(date +"%Y") - 1))
+fi
 
 # ---------- FUNCTIONS ----------
 
