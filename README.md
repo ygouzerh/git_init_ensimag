@@ -15,9 +15,14 @@ $(basename "$0")  --gitname name_of_the_git [options]
 --gitname | -g       Name of the .git
 
 ## Options
---help | -h          Display help message
---foldername | -f    Name of the folder on the server
---colleague | -c     List of the pseudo of your colleague
+--help | -h          Display help message<br/>;
+
+
+--foldername | -f    Name of the folder on the server<br/>;
+
+
+--colleague | -c     List of the pseudo of your colleague<br/>;
+
 
 ## Contributions
 
